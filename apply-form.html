@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Job</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>Apply for a Job</h1>
+            <form action="submit-application.php" method="POST">
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" readonly value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="resume">Resume</label>
+                    <input type="file" id="resume" name="resume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cover">Cover Letter</label>
+                    <textarea id="cover" name="cover" placeholder="Write a brief cover letter" rows="5" required style="width: 420px;height:135px;"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const company = urlParams.get('company');
+        if (company) {
+            document.getElementById('company').value = company;
+        }
+    </script>
+</body>
+
+</html>
